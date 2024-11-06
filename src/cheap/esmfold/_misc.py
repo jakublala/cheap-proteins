@@ -110,7 +110,7 @@ def output_to_pdb(output: T.Dict) -> T.List[str]:
             atom_mask=mask,
             residue_index=resid,
             b_factors=output["plddt"][i],
-            chain_index=output["chain_index"][i] if "chain_index" in output else None,
+            chain_index=output["chain_index"][i] if "chain_index" in output else np.array([i+1], dtype=np.int32),
         )
         pdbs.append(to_pdb(pred))
     return pdbs
