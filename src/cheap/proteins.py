@@ -285,8 +285,6 @@ class LatentToStructure:
                 mask=mask_,
                 num_recycles=num_recycles,
             )
-        print(f"output: {output}")
-        print(f" {output['chain_index']}")
         pdb_str = output_to_pdb(output)
 
         for k, v in output.items():
